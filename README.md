@@ -26,21 +26,21 @@ The main contributions of this work are:
 2. Empirical analysis of fusion weights on retrieval performance
 3. Comprehensive evaluation using multiple Precision@K metrics
 
-# Dataset
+## Dataset
 
-## STL-10 Dataset
+### STL-10 Dataset
 
 * 5000 labeled training images
 * 96x96 resolution
 * 10 object categories
 
-## Why STL-10?
+### Why STL-10?
 
 * Higher resolution than CIFAR-10
 * Better visual quality for retrieval tasks
 * Suitable for feature extraction using CNNs
 
-## Sample Dataset
+### Sample Dataset
 
 A subset of 500 images is used for:
 
@@ -50,61 +50,61 @@ A subset of 500 images is used for:
 
 
 
-# Edge Detection (STL-10)
+## Edge Detection (STL-10)
 
-## Objective
+### Objective
 
 Convert real images into sketch-like representations to simulate user sketches.
 
-## Method
+### Method
 
 * Convert RGB images to grayscale
 * Apply Canny Edge Detection
 
-## Why?
+### Why?
 
 Sketch-based retrieval relies on structural features such as edges and shapes rather than color or texture.
 
-## Output
+### Output
 
 Edge images stored in:
 data/sample/edges/
 
-## Observation
+### Observation
 
 Edges effectively capture object outlines, making them suitable for sketch-based retrieval tasks.
 
 
 
-# Dual Feature Extraction
+## Dual Feature Extraction
 
-## Objective
+### Objective
 
 Extract both semantic and structural representations of images.
 
-## Methods
+### Methods
 
-### 1. Raw Image Embeddings
+#### 1. Raw Image Embeddings
 
 * Input: Original images
 * Captures: Semantic information
 
-### 2. Edge Image Embeddings
+#### 2. Edge Image Embeddings
 
 * Input: Edge-detected images
 * Captures: Structural features
 
-## Model Used
+### Model Used
 
 * ResNet18 (pretrained)
 
-## Output
+### Output
 
 * raw_embeddings.npy
 * edge_embeddings.npy
 * filenames.npy
 
-## Insight
+### Insight
 
 Combining semantic and structural features can improve retrieval performance.
 
