@@ -40,15 +40,6 @@ The main contributions of this work are:
 * Better visual quality for retrieval tasks
 * Suitable for feature extraction using CNNs
 
-### Sample Dataset
-
-A subset of 500 images is used for:
-
-* Faster experimentation
-* Deployment (Streamlit)
-* GitHub compatibility
-
-
 
 ## Edge Detection (STL-10)
 
