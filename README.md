@@ -1,5 +1,8 @@
 # Hybrid Feature Fusion for Sketch-Based Image Retrieval using Structural and Deep Embeddings
 
+## Overview
+
+This project presents a hybrid feature fusion approach for Sketch-Based Image Retrieval (SBIR), combining structural edge-based representations with deep semantic embeddings. The system leverages convolutional neural networks and feature fusion techniques to improve retrieval performance, supported by quantitative evaluation and visual analysis.
 
 
 ## Abstract
@@ -251,6 +254,93 @@ This figure visualizes how retrieval performance changes as the contribution of 
 * Supports the claim that a balanced combination of semantic and structural features is beneficial.
 
 ---
+
+---
+
+## 📁 Project Directory Structure
+
+```
+sketh_cbir_research/
+│
+├── data/
+│   ├── raw/                    # Full dataset (ignored in git)
+│   ├── edges/                  # Full edges dataset (ignored in git)
+│   └── sample/                 # Small subset for GitHub/UI
+│       ├── raw/                # Sample raw images
+│       └── edges/              # Sample edge images
+│
+├── features/
+│   ├── raw_embeddings.npy      # Raw image embeddings (ResNet18)
+│   ├── edge_embeddings.npy     # Edge image embeddings (ResNet18)
+│   ├── fused_embeddings.npy    # Fused feature embeddings
+│   └── filenames.npy           # Corresponding image filenames
+│
+├── src/
+│   ├── preprocessing/
+│   │   └── edge_detection.py   # Canny edge detection implementation
+│   │
+│   ├── feature_extraction/
+│   │   ├── extract_raw_features.py    # Extract semantic embeddings
+│   │   ├── extract_edge_features.py   # Extract structural embeddings
+│   │   └── fusion.py                  # Feature fusion mechanism
+│   │
+│   ├── retrieval/
+│   │   └── retrieve.py         # Image retrieval engine
+│   │
+│   ├── evaluation/
+│   │   └── evaluate.py         # Evaluation metrics (Precision@K)
+│   │
+│   └── spark/
+│       └── spark_pipeline.py   # Spark-based data pipeline (optional)
+│
+├── scripts/
+│   └── create_sample.py        # Script to create sample dataset
+│
+├── notebooks/
+│   └── experiments.ipynb       # Jupyter notebook for experiments
+│
+├── reports/
+│   ├── figures/                # Visualization outputs
+│   ├── tables/                 # Results tables
+│   ├── logs/                   # Execution logs
+│   └── paper/                  # Paper and documentation
+│
+├── app.py                      # Main Streamlit application
+├── requirements.txt            # Python dependencies
+├── README.md                   # This file
+└── .gitignore                  # Git ignore rules
+```
+
+### Directory Descriptions
+
+| Directory | Purpose |
+|-----------|---------|
+| `data/` | Raw and processed dataset storage |
+| `features/` | Precomputed embeddings and feature vectors |
+| `src/` | Core source code modules |
+| `scripts/` | Utility and preprocessing scripts |
+| `notebooks/` | Jupyter notebooks for experimentation |
+| `reports/` | Results, visualizations, and documentation |
+| `app.py` | Streamlit web application entry point |
+
+---
+
+
+
+## ⚠️ Limitations
+
+* Edge-based representations may lose fine-grained semantic details
+* STL-10 dataset is not specifically designed for sketch-based retrieval
+* Fusion is manually weighted (α), not learned dynamically
+
+These limitations provide opportunities for future improvements.
+
+## 🚀 Future Work
+
+* Learn adaptive fusion weights using neural networks
+* Evaluate on sketch-specific datasets (e.g., TU-Berlin, Sketchy)
+* Incorporate multimodal retrieval (text + sketch)
+* Explore transformer-based feature representations
 
 ## Summary
 
