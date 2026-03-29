@@ -187,15 +187,13 @@ This validates the effectiveness of the proposed **hybrid feature fusion approac
 
 
 
-# 📊 Experimental Visualizations
-
-This folder contains visual analysis of the retrieval performance for different feature configurations used in the proposed Hybrid Feature Fusion approach.
+## Experimental Visualizations
 
 These figures support the quantitative results presented in the evaluation section.
 
 ---
 
-## 1. Fusion Weight Analysis (`alpha_analysis.png`)
+### 1. Fusion Weight Analysis (`alpha_analysis.png`)
 
 This plot shows the effect of varying the fusion weight (α) between edge-based and raw image embeddings.
 
@@ -207,7 +205,7 @@ This plot shows the effect of varying the fusion weight (α) between edge-based 
 
 ---
 
-## 2. Precision Comparison Across Methods (`precision_comparison.png`)
+### 2. Precision Comparison Across Methods (`precision_comparison.png`)
 
 This plot compares Precision@K (K = 3, 5, 10) across different retrieval strategies:
 
@@ -223,7 +221,7 @@ This plot compares Precision@K (K = 3, 5, 10) across different retrieval strateg
 
 ---
 
-## 3. Bar Chart Comparison (`bar_p5.png`)
+### 3. Bar Chart Comparison (`bar_p5.png`)
 
 This visualization presents a direct comparison of Precision@5 across all methods.
 
@@ -234,7 +232,7 @@ This visualization presents a direct comparison of Precision@5 across all method
 
 ---
 
-## 4. Fusion Performance Trend (`fusion_graph.png`)
+### 4. Fusion Performance Trend (`fusion_graph.png`)
 
 This figure visualizes how retrieval performance changes as the contribution of edge features increases.
 
@@ -251,7 +249,7 @@ This figure visualizes how retrieval performance changes as the contribution of 
 ## 📁 Project Directory Structure
 
 ```
-sketh_cbir_research/
+sketch_cbir_research/
 │
 ├── data/
 │   ├── raw/                    # Full dataset (ignored in git)
